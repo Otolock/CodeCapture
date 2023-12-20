@@ -17,8 +17,8 @@ export default function CodeBlock({ code, language }) {
 
   return (
     <>
-      <pre className="rounded-t-lg overflow-hidden bg-gray-800 m-0">
-        <code ref={codeRef} className={`language-${language} block p-2`}>
+      <pre>
+        <code style={{ whiteSpace: 'pre-wrap' }} ref={codeRef} className={`language-${language}`}>
           {/* Code is set via innerHTML in useEffect */}
         </code>
       </pre>

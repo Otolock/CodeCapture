@@ -1,7 +1,7 @@
 'use client'
 
 import React, { useRef, useState, useCallback } from 'react';
-import * as htmlToImage from 'html-to-image';
+import { toPng } from 'html-to-image';
 import CodeEditor from '@/components/CodeEditor';
 import CodeBlock from '@/components/CodeBlock';
 import Container from '@/components/Container';
@@ -25,20 +25,20 @@ ReactDOM.render(<App />, document.getElementById('root'));
 
   const convertToImage = useCallback(() => {
     if (codeBlockRef.current) {
-      htmlToImage.toBlob(codeBlockRef.current, { cacheBust: true })
-        .then((blob) => {
-          const url = URL.createObjectURL(blob);
+      const width = codeBlockRef.current.scrollWidth; // Get the full width of the element
+      toPng(codeBlockRef.current, { cacheBust: true, width })
+        .then((dataUrl) => {
           const link = document.createElement('a');
           link.download = 'code-snippet.png';
-          link.href = url;
+          link.href = dataUrl;
           link.click();
-          URL.revokeObjectURL(url); // Clean up the URL object
         })
         .catch((error) => {
           console.error('oops, something went wrong!', error);
         });
     }
   }, [codeBlockRef]);
+  
 
   return (
     <>
@@ -50,7 +50,7 @@ ReactDOM.render(<App />, document.getElementById('root'));
           code={code}
           onChange={setCode}
         />
-        <div ref={codeBlockRef} className="mb-4"> {/* Added margin-bottom here */}
+        <div ref={codeBlockRef} className="mb-4">
           <CodeBlock key={code} code={code} language={language} />
         </div>
         <button
@@ -60,8 +60,7 @@ ReactDOM.render(<App />, document.getElementById('root'));
           Download Image
         </button>
       </Container>
-      <Footer version={0.1}/>
+      <Footer version={0.2} />
     </>
-
   );
 }
