@@ -23,7 +23,7 @@ Visit [codecapture.app](https://codecapture.app) to see CodeCapture in action.
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/your-username/CodeCapture.git
+   git clone https://github.com/otolock/CodeCapture.git
    ```
 2. Navigate to the project directory:
    ```bash
