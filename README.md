@@ -4,9 +4,13 @@ CodeCapture is a powerful and user-friendly tool designed for developers, educat
 
 ## Features
 
-- **Code Editor Integration:** Utilizes [`@monaco-editor/react`](https://www.npmjs.com/package/@monaco-editor/react) for an intuitive and feature-rich code editing experience.
-- **Syntax Highlighting:** Employs [PrismJS](https://prismjs.com/) for beautiful syntax highlighting, supporting a wide range of programming languages.
-- **HTML to Image Conversion:** Transforms code snippets into images using the [`html-to-image`](https://www.npmjs.com/package/html-to-image) library, ensuring high-quality, sharable visuals.
+- **CodeMirror Integration:** Employs [`@uiw/react-codemirror`](https://www.npmjs.com/package/@uiw/react-codemirror) for an intuitive and feature-rich code editing experience.
+- **Syntax Highlighting:** Provides built-in syntax highlighting with various language support through CodeMirror.
+- **HTML to Image Conversion:** Utilizes the [`html-to-image`](https://www.npmjs.com/package/html-to-image) library to transform code snippets into high-quality images, perfect for sharing.
+
+## Live App
+
+Visit [codecapture.app](https://codecapture.app) to see CodeCapture in action.
 
 ## Getting Started
 
@@ -59,6 +63,6 @@ This project is licensed under the [MIT License](LICENSE) - see the LICENSE file
 
 ## Acknowledgments
 
-- [@monaco-editor/react](https://www.npmjs.com/package/@monaco-editor/react) for the code editor.
-- [PrismJS](https://prismjs.com/) for syntax highlighting.
+- [`@uiw/react-codemirror`](https://www.npmjs.com/package/@uiw/react-codemirror) for the code editor integration.
 - [`html-to-image`](https://www.npmjs.com/package/html-to-image) for image generation.
+
