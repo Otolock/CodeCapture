@@ -7,7 +7,7 @@ import { less } from '@codemirror/lang-less';
 import { json } from '@codemirror/lang-json';
 import { python } from '@codemirror/lang-python';
 
-const CodeEditor = forwardRef((props, ref) => {
+export const CodeEditor = forwardRef((props, ref) => {
   const [selectedLanguage, setSelectedLanguage] = useState('javascript');
   const [value, setValue] = useState(`
 import React from 'react';
@@ -91,4 +91,4 @@ ReactDOM.render(<App />, document.getElementById('root'));
   );
 });
 
-export default CodeEditor;
+CodeEditor.displayName = 'CodeEditor';

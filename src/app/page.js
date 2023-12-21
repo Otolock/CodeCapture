@@ -2,7 +2,7 @@
 
 import React, { useRef, useCallback } from 'react';
 import { toPng } from 'html-to-image';
-import CodeEditor from '@/components/CodeEditor';
+import {CodeEditor} from '@/components/CodeEditor';
 import Container from '@/components/Container';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
